@@ -44,6 +44,14 @@ export class UserService {
 	      );
 		}
 
+		searchUser(searchUser):Observable<any[]>{
+			 return this.http.post<any[]>(`${this.serverUrl}/user/search`,JSON.stringify(searchUser),httpOptions)
+	      .pipe(
+	        tap(devices => console.log(`search users`)),
+	        catchError(this.handleError('searchUser', []))
+	      );
+		}
+
 		editUser(user): Observable<any> {       
 
         return this.http.put<Device>(`${this.serverUrl}/user/${user._id}`, JSON.stringify(user), httpOptions).pipe(

@@ -15,6 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotificationComponent } from './notification/notification.component';
 import { AccountComponent } from './account/account.component';
 import { SharedModule } from './shared/shared.module';
+import { ManageUserComponent } from './user/manage-user/manage-user.component';
+import { CreateUserComponent } from './user/create-user/create-user.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,9 @@ import { SharedModule } from './shared/shared.module';
     RegisterComponent,
     DashboardComponent,
     NotificationComponent,
-    AccountComponent
+    AccountComponent,
+    ManageUserComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,47 @@
+<div class="card" >
+  <h4 class="card-header">Search Device</h4>
+  <div class="card-block">
+    <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="search()" style="text-align:center">
+      <div class="form-group">
+          <input class="form-control" type="text" name="username" formControlName="username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="area" formControlName="area" placeholder="Area">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="role" formControlName="role" placeholder="Role">
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!searchForm.valid"><i class="fa fa-search"></i> Search</button>
+      <button class="btn btn-primary" type="button" (click)="addUser()" ><i class="fa fa-search"></i> Add User</button>
+    </form>
+  </div>
+</div> 
+<div class="card">
+    <h4 class="card-header">User List</h4>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-default">
+        <tr>
+          <!--<th class="w30"><input type="checkbox" name="all" [checked]="isAllChecked()" (change)="checkAll($event)"/></th>-->
+          <th>User Name</th>
+          <th>PhoneNumber</th>
+          <th>Area</th>          
+          <th>Role</th>
+          <th>Actions</th>          
+        </tr>
+      </thead>          
+      <tbody >
+        <tr *ngFor="let user of users">
+          <!--<td class="w30"><input type="checkbox" name="sizecb[]" value="{{device._id}}" [(ngModel)]="device.state"/></td>-->
+          <td>{{user.firstName}} {{user.lastName}}</td>
+          <td>{{user.phoneNumber}}</td>
+          <td>{{user.area}}</td>        
+          <td>{{user.role}}</td>
+          <td>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-eye" (click)="viewDeviceDetail(device._id)"></i> View</button>
+            <button class="btn btn-sm btn-warning"><i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteDevice(device)"><i class="fa fa-trash"></i> Delete</button>
+          </td>   
+        </tr>  
+      </tbody>      
+    </table>    
+  </div>

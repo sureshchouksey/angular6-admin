@@ -8,15 +8,19 @@ import { LoginComponent} from './login/login.component';
 import { NotificationComponent} from './notification/notification.component';
 import { LogoutComponent} from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
+import { ManageUserComponent} from './user/manage-user/manage-user.component';
+import { CreateUserComponent} from './user/create-user/create-user.component'
+
 const ROUTES: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'dashboard',  component: DashboardComponent }, 
   { path:'register',component:RegisterComponent},
   { path:'deviceRegister',component:DeviceUserComponent},
   { path:'login',component:LoginComponent},
-  { path:'notification',component:NotificationComponent},
+  { path:'notification',component:ManageUserComponent},
   { path:'logout',component:LogoutComponent},
-  { path:'account',component:AccountComponent}
+  { path:'account',component:AccountComponent},
+  { path:'createUser',component:CreateUserComponent}
   
 ];
 
