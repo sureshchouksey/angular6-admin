@@ -41,7 +41,7 @@ export class CreateUserComponent implements OnInit {
                 public toast: ToastComponent){}
     ngOnInit(){
         this.userRegisterForm = this.formBuilder.group({
-            username :this.firstName,
+            firstName :this.firstName,
             lastName:this.lastName,
             phoneNumber:this.phoneNumber,
             email:this.email,
@@ -76,8 +76,11 @@ export class CreateUserComponent implements OnInit {
     setClassStreet() {
         return { 'has-danger': !this.streetName.pristine && !this.streetName.valid };
     }
-     setClassArea() {
+    setClassArea() {
         return { 'has-danger': !this.area.pristine && !this.area.valid };
+    }
+    setClassLandmark() {
+        return { 'has-danger': !this.landmark.pristine && !this.landmark.valid };
     }
      setClassPincode() {
         return { 'has-danger': !this.pincode.pristine && !this.pincode.valid };

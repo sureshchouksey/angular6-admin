@@ -1,12 +1,12 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card">
-  <h4 class="card-header">Device Register</h4>
+  <h4 class="card-header">User Register</h4>
   <div class="card-block">
     <form [formGroup]="userRegisterForm" (ngSubmit)="register()">
       <div class="input-group" [ngClass]="setClassFirstName()">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <input class="form-control" type="text" name="firstName" formControlName="firsName" placeholder="FirstName" autofocus>
+        <input class="form-control" type="text" name="firstName" formControlName="firstName" placeholder="FirstName" autofocus>
       </div>
       <div class="input-group" [ngClass]="setClassLastName()">
         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -24,23 +24,44 @@
         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
         <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email">
       </div>
-      <div class="input-group" [ngClass]="setClassPackageName()">
+      <div class="input-group" [ngClass]="setClassFlat()">
         <span class="input-group-addon"><i class="fa fa-key"></i></span>
-        <input class="form-control" type="text" name="packageName" formControlName="packageName" placeholder="Package Name">
+        <input class="form-control" type="text" name="flatNoBuidlingName" formControlName="flatNoBuidlingName" placeholder="FlatNoBuidlingName">
       </div>
-      <div class="input-group" [ngClass]="setClassGroup()">
+      <div class="input-group" [ngClass]="setClassStreet()">
         <span class="input-group-addon"><i class="fa fa-key"></i></span>
-        <input class="form-control" type="text" name="topic" formControlName="topic" placeholder="Topic">
+        <input class="form-control" type="text" name="streetName" formControlName="streetName" placeholder="StreetName">
       </div>
+      <div class="input-group" [ngClass]="setClassArea()">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input class="form-control" type="text" name="area" formControlName="area" placeholder="Area">
+      </div>
+      <div class="input-group" [ngClass]="setClassLandmark()">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input class="form-control" type="text" name="landmark" formControlName="landmark" placeholder="Landmark">
+      </div>
+      <div class="input-group" [ngClass]="setClassPincode()">
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input class="form-control" type="text" name="pincode" formControlName="pincode" placeholder="pincode">
+      </div>
+      <div class="input-group" >
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input class="form-control" type="text" name="city" formControlName="city" placeholder="City">
+      </div>
+       <div class="input-group" >
+        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        <input class="form-control" type="text" name="state" formControlName="state" placeholder="State">
+      </div>
+
       <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-black-tie"></i></span>
-        <select class="form-control" name="platform" formControlName="platform">
-          <option value="" selected disabled>Platform</option>
-          <option value="android">Android</option>
-          <option value="ios">IOS</option>
+        <select class="form-control" name="role" formControlName="role">
+          <option value="" selected disabled>Role</option>
+          <option value="agent">Agent</option>
+          <option value="admin">Admin</option>
         </select>
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!deviceRegisterForm.valid"><i class="fa fa-user-plus"></i> Register</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!userRegisterForm.valid"><i class="fa fa-user-plus"></i> Register</button>
     </form>
   </div>
 </div>

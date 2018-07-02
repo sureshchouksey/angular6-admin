@@ -7,6 +7,7 @@ import { Payload} from '../model/Payload';
 import { Notification} from '../model/Notification';
 import { DeviceDetailComponent} from '../device-detail/device-detail.component';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 export class SearchDevice {
   username:string;
@@ -35,7 +36,7 @@ export class DashboardComponent implements OnInit {
                                   Validators.minLength(6)]);	
   constructor(private formBuilder:FormBuilder,
               private pushNotificationService:PushNotificationService,
-              public toast: ToastComponent,public auth: AuthService ) { }
+              public toast: ToastComponent,public auth: AuthService, private router: Router ) { }
 
   ngOnInit() {
     
@@ -56,6 +57,11 @@ export class DashboardComponent implements OnInit {
   }
   setClassPassword() {
     return { 'has-danger': !this.messageBody.pristine && !this.messageBody.valid };
+  }
+
+  addDevice(){
+
+    this.router.navigate(['deviceRegister']);
   }
 
   getDevices(){

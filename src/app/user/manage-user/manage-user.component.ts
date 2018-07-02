@@ -21,7 +21,7 @@ export class ManageUserComponent implements OnInit {
   username = new FormControl('');
   area = new FormControl('');
   role = new FormControl('');
-  constructor(private formBuilder:FormBuilder,private userService:UserService, private router: Router,) { }
+  constructor(private formBuilder:FormBuilder,private userService:UserService, private router: Router) { }
 
   ngOnInit() {
     this.getUsers();
